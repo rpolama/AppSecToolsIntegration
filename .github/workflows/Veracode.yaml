@@ -19,10 +19,10 @@ jobs:
                     
             - name: build Repo
               run: mvn clean install
-    static_analysis:
-          name: Veracode
-          runs-on: ubuntu-latest
-          steps:
+#    static_analysis:
+#          name: Veracode
+#          runs-on: ubuntu-latest
+#          steps:
             - name: Upload and scan
               uses: veracode/veracode-uploadandscan-action@0.2.4
               with:
