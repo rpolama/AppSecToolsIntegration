@@ -15,7 +15,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
               with:
-                    repository: aviskalange/AppSecToolsIntegration
+                repository: rpolama/AppSecToolsIntegration
                     
             - name: build Repo
               run: mvn clean install
