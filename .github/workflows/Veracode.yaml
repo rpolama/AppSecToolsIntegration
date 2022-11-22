@@ -27,7 +27,7 @@ jobs:
               with:
                     appname: 'GitHub Vera POC'
                     createprofile: false
-                    filepath: AppSecToolsIntegration/target/
+                    filepath: target/
                     version: ${{ github.run_id }}-${{ github.run_number }}-${{ github.run_attempt }}
                     vid: ${{secrets.VERACODE_API_ID}}
                     vkey: ${{secrets.VERACODE_API_KEY}}
