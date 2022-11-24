@@ -23,15 +23,15 @@ jobs:
               uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.5
               with:
                     # Provide Checkmarx URL
-                    checkmarx_url: https://partners9x.checkmarx.net/
+                    checkmarx_url: https://ast.checkmarx.net/
                     # Select a Checkmarx Team (optional)
-                    team: /CxServer/servicenow
+                    # team: /CxServer/servicenow
                     # Provide Checkmarx Username
-                    checkmarx_username: servicenow
+                    checkmarx_username: ramachandrarao.p
                     # Provide Checkmarx Password
-                    checkmarx_password: Cx12345678! 
+                    checkmarx_password: ${{secrets.CX_PASSWORD}}
                     # Provide Checkmarx Client Secret
-                    checkmarx_client_secret: 014DF517-39D1-4453-B7B3-9930C563627C 
+                    checkmarx_client_secret: ${{secrets.CX_SECRET}} 
                     # Select a Checkmarx Project
                     project: GitHubDemoProject
                     # Vulnerability Scanners (sast, sca, cxgo)
