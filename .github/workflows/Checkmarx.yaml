@@ -23,6 +23,13 @@ jobs:
                 cx_tenant: servicenow-nfr
                 cx_client_id: ${{ secrets.CX_CLIENT_ID }}
                 cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
+    logging:
+        name: loggingRama
+        runs-on: ubuntu-latest
+        steps:
+            - name: logging output
+              run: |
+                echo: {jobs.build.cxScanId}
               
             #- name: Checkmarx CxFlow Action
             # You may pin to the exact commit or the version.
