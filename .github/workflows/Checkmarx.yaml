@@ -21,7 +21,6 @@ jobs:
               with:
                 base_uri: https://ast.checkmarx.net/
                 cx_tenant: servicenow-nfr
-                # cx_tenant: ee8736ff-eb86-4428-bca5-8ea392e42be9
                 cx_client_id: ${{ secrets.CX_CLIENT_ID }}
                 cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
               
