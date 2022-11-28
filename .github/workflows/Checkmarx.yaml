@@ -25,15 +25,7 @@ jobs:
                 cx_client_id: ${{ secrets.CX_CLIENT_ID }}
                 cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
             - name: log checkmarx output
-              run: |
-                echo {steps.checkmarx_run.outputs.cxScanId}
-    logging:
-        name: loggingRama
-        runs-on: ubuntu-latest
-        steps:
-            - name: logging output
-              run: |
-                echo: {jobs.build.cxScanId}
+              run: echo "${{steps.checkmarx_run.outputs.cxScanId}}"
               
             #- name: Checkmarx CxFlow Action
             # You may pin to the exact commit or the version.
