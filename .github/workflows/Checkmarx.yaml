@@ -1,11 +1,11 @@
 name: Checkmarx
     
 on:
-#   push:
-#     branches: ['master']
+   workflow_dispatch:
+   push:
+     branches: ['master']
 #   pull_request:
 #     branches: ['master']
-  workflow_dispatch:
 
 jobs:
     build:
@@ -17,13 +17,13 @@ jobs:
               with:
                     repository: rpolama/AppSecToolsIntegration
             - name: Checkmarx AST Github Action
-              id: checkmarx
               uses: Checkmarx/ast-github-action@2.0.9
               with:
                 base_uri: https://ast.checkmarx.net/
                 cx_tenant: servicenow-nfr
                 cx_client_id: ${{ secrets.CX_CLIENT_ID }}
                 cx_client_secret: ${{ secrets.CX_CLIENT_SECRET }}
+              id: checkmarx
             - name: log checkmarx output
               run: |
                 echo "${{join(steps.checkmarx.outputs.*, ', ')}}"
