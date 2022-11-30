@@ -22,9 +22,9 @@ jobs:
               with:
                 checkmarx_url: https://ast.checkmarx.net/
                 team: /CxServer/servicenow
-                checkmarx_username: ramachandrarao.p
-                checkmarx_password: ${{secrets.CX_PASSWORD_OLD}}
-                checkmarx_client_secret: ${{secrets.CX_SECRET_OLD}} 
+                checkmarx_username: servicenow
+                checkmarx_password: ${{secrets.CX_ONPREM_PASSWORD}}
+                checkmarx_client_secret: ${{secrets.CX_ONPREM_SECRET}} 
                 project: GitHubDemoProject
                 scanners: sast
                 params: --namespace=rpolama --repo-name=AppSecToolsIntegration --branch=master --cx-flow.filterSeverity --cx-flow.filterCategory  --checkmarx.disable-clubbing=true
