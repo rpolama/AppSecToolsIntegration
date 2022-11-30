@@ -26,5 +26,5 @@ jobs:
                 checkmarx_password: ${{secrets.CX_ONPREM_PASSWORD}}
                 checkmarx_client_secret: ${{secrets.CX_ONPREM_SECRET}} 
                 project: GitHubDemoProject
-                scanners: sast,cxgo,sca
+                scanners: sast
                 # params: --namespace=rpolama --repo-name=AppSecToolsIntegration --branch=master --cx-flow.filterSeverity --cx-flow.filterCategory  --checkmarx.disable-clubbing=true
