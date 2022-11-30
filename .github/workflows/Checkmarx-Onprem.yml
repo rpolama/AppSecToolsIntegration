@@ -20,7 +20,7 @@ jobs:
             - name: Checkmarx CxFlow Action
               uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.5
               with:
-                checkmarx_url: https://ast.checkmarx.net/
+                checkmarx_url: https://partners9x.checkmarx.net/
                 team: /CxServer/servicenow
                 checkmarx_username: servicenow
                 checkmarx_password: ${{secrets.CX_ONPREM_PASSWORD}}
