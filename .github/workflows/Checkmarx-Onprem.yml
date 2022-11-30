@@ -1,0 +1,30 @@
+name: Checkmarx-Onprem
+    
+on:
+   workflow_dispatch:
+#   push:
+#     branches: ['master']
+#   pull_request:
+#     branches: ['master']
+
+jobs:
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+              with:
+                repository: rpolama/AppSecToolsIntegration
+              
+            - name: Checkmarx CxFlow Action
+              uses: checkmarx-ts/checkmarx-cxflow-github-action@v1.5
+              with:
+                checkmarx_url: https://ast.checkmarx.net/
+                team: /CxServer/servicenow
+                checkmarx_username: ramachandrarao.p
+                checkmarx_password: ${{secrets.CX_PASSWORD_OLD}}
+                checkmarx_client_secret: ${{secrets.CX_SECRET_OLD}} 
+                project: GitHubDemoProject
+                scanners: sast
+                params: --namespace=rpolama --repo-name=AppSecToolsIntegration --branch=master --cx-flow.filterSeverity --cx-flow.filterCategory  --checkmarx.disable-clubbing=true
